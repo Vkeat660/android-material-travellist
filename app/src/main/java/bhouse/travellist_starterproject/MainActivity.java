@@ -53,22 +53,22 @@ public class MainActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
-
-        if(menu != null){
-            View iv = (View) menu.findItem(R.id.action_toggle).getActionView();
-            iv.animate().alpha(1.0f);
-        }
+        animateMenuAlpha(1.0f);
 
     }
 
     @Override
     protected void onPause() {
         super.onPause();
+        animateMenuAlpha(0.0f);
+    }
 
+    private void animateMenuAlpha(float alpha){
         if(menu != null){
             View iv = (View) menu.findItem(R.id.action_toggle).getActionView();
-            iv.animate().alpha(0.0f);
+            iv.animate().alpha(alpha);
         }
+
     }
 
     TravelListAdapter.OnItemClickListener onItemClickListener = new TravelListAdapter.OnItemClickListener() {
@@ -123,7 +123,7 @@ public class MainActivity extends Activity {
         });
 
 
-        iv.animate().alpha(1.0f);
+        animateMenuAlpha(1.0f);
 
         return true;
     }
