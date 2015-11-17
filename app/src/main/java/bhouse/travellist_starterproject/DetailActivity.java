@@ -87,7 +87,7 @@ public class DetailActivity extends Activity implements View.OnClickListener {
             @Override
             public void onTransitionEnd(Transition transition) {
                 super.onTransitionEnd(transition);
-                mAddButton.animate().alpha(1.0f);
+                mAddButton.animate().setDuration(150).alpha(1.0f);
                 getWindow().getEnterTransition().removeListener(this);
             }
         });
@@ -175,7 +175,7 @@ public class DetailActivity extends Activity implements View.OnClickListener {
     @Override
     public void onBackPressed() {
         AlphaAnimation alphaAnimation = new AlphaAnimation(1.0f, 0.0f);
-        alphaAnimation.setDuration(100);
+        alphaAnimation.setDuration(150);
         mAddButton.startAnimation(alphaAnimation);
         alphaAnimation.setAnimationListener(new Animation.AnimationListener() {
             @Override

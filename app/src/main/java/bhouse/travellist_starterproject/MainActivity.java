@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toolbar;
 
 
@@ -67,6 +68,20 @@ public class MainActivity extends Activity {
         if(menu != null){
             View iv = (View) menu.findItem(R.id.action_toggle).getActionView();
             iv.animate().alpha(alpha);
+
+            TextView toolbarTitle = null;
+            for (int i = 0; i < toolbar.getChildCount(); ++i) {
+                View child = toolbar.getChildAt(i);
+
+                // assuming that the title is the first instance of TextView
+                // you can also check if the title string matches
+                if (child instanceof TextView) {
+                    toolbarTitle = (TextView)child;
+                    break;
+                }
+            }
+
+            toolbarTitle.animate().setDuration(150).alpha(alpha);
         }
 
     }
