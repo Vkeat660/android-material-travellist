@@ -1,4 +1,4 @@
-package bhouse.travellist;
+package bhouse.travellist_starterproject;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

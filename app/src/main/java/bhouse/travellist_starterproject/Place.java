@@ -1,13 +1,9 @@
-package bhouse.travellist;
+package bhouse.travellist_starterproject;
 
 import android.content.Context;
 
-/**
- * Created by megha on 15-03-06.
- */
 public class Place {
 
-  public String id;
   public String name;
   public String imageName;
   public boolean isFav;
